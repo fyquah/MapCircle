@@ -1,6 +1,10 @@
 <?php
 class Message extends AppModel{
 	public $hasMany = array("Comment");
+	public $belongsTo = array("User" => array(
+		"className" => "User" ,
+		"fields" => array("id" , "first_name" , "last_name")
+	));
 
 	public $validate = array(
 		"message" => array(

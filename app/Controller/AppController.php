@@ -32,4 +32,26 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 
+	public $helpers = array('Html', 'Form', 'Session');
+    public $components = array('Session' , "RequestHandler" , 
+    	"Auth" => array(
+            "authenticate" => array("Basic"),
+    		"loginRedirect" => array(
+    			"controller" => "messages",
+    			"action" => "index"
+    		),
+    		"logoutRedirect" => array(
+    			"controller" => "users",
+    			"action" => "login"
+    		),
+    		"authError" => "You have to login to visit that page!",
+            'userModel' => "User"
+    		
+    	)
+    );
+
+    public function beforeFilter(){
+		AuthComponent::$sessionKey = false;
+        $this->Auth->allow(array("signup"));
+	}
 }
