@@ -1614,3 +1614,120 @@ Stack Trace:
 #8 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
 #9 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #10 {main}
+2014-06-13 21:22:20 Error: [UnauthorizedException] Unauthorized
+Request URL: /
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Component/AuthComponent.php(348): BasicAuthenticate->unauthenticated(Object(CakeRequest), Object(CakeResponse))
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Component/AuthComponent.php(304): AuthComponent->_unauthenticated(Object(MessagesController))
+#2 [internal function]: AuthComponent->startup(Object(MessagesController))
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Utility/ObjectCollection.php(129): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /home/fyquah/dev/php/proj3/lib/Cake/Event/CakeEventManager.php(244): call_user_func(Array, Object(CakeEvent))
+#6 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Controller.php(675): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(187): Controller->startupProcess()
+#8 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#9 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-06-13 21:25:36 Error: [MissingControllerException] Controller class UserController could not be found.
+Exception Attributes: array (
+  'class' => 'UserController',
+  'plugin' => NULL,
+)
+Request URL: /
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-13 21:25:58 Error: [UnauthorizedException] Unauthorized
+Request URL: /messages
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Component/AuthComponent.php(348): BasicAuthenticate->unauthenticated(Object(CakeRequest), Object(CakeResponse))
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Component/AuthComponent.php(304): AuthComponent->_unauthenticated(Object(MessagesController))
+#2 [internal function]: AuthComponent->startup(Object(MessagesController))
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Utility/ObjectCollection.php(129): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /home/fyquah/dev/php/proj3/lib/Cake/Event/CakeEventManager.php(244): call_user_func(Array, Object(CakeEvent))
+#6 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Controller.php(675): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(187): Controller->startupProcess()
+#8 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#9 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-06-13 21:26:58 Error: [UnauthorizedException] Unauthorized
+Request URL: /messages/comment/4
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Component/AuthComponent.php(348): BasicAuthenticate->unauthenticated(Object(CakeRequest), Object(CakeResponse))
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Component/AuthComponent.php(304): AuthComponent->_unauthenticated(Object(MessagesController))
+#2 [internal function]: AuthComponent->startup(Object(MessagesController))
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Utility/ObjectCollection.php(129): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /home/fyquah/dev/php/proj3/lib/Cake/Event/CakeEventManager.php(244): call_user_func(Array, Object(CakeEvent))
+#6 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Controller.php(675): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(187): Controller->startupProcess()
+#8 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#9 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-06-13 21:26:58 Error: [UnauthorizedException] Unauthorized
+Request URL: /messages
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Component/AuthComponent.php(348): BasicAuthenticate->unauthenticated(Object(CakeRequest), Object(CakeResponse))
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Component/AuthComponent.php(304): AuthComponent->_unauthenticated(Object(MessagesController))
+#2 [internal function]: AuthComponent->startup(Object(MessagesController))
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Utility/ObjectCollection.php(129): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /home/fyquah/dev/php/proj3/lib/Cake/Event/CakeEventManager.php(244): call_user_func(Array, Object(CakeEvent))
+#6 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Controller.php(675): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(187): Controller->startupProcess()
+#8 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#9 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-06-13 21:29:24 Error: [UnauthorizedException] Unauthorized
+Request URL: /messages
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Component/AuthComponent.php(348): BasicAuthenticate->unauthenticated(Object(CakeRequest), Object(CakeResponse))
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Component/AuthComponent.php(304): AuthComponent->_unauthenticated(Object(MessagesController))
+#2 [internal function]: AuthComponent->startup(Object(MessagesController))
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Utility/ObjectCollection.php(129): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /home/fyquah/dev/php/proj3/lib/Cake/Event/CakeEventManager.php(244): call_user_func(Array, Object(CakeEvent))
+#6 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Controller.php(675): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(187): Controller->startupProcess()
+#8 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#9 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-06-13 21:30:39 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [/home/fyquah/dev/php/proj3/app/Controller/AppController.php, line 49]
+2014-06-13 21:30:39 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+Request URL: /users/
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/fyquah/de...', 49)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/fyquah/de...', 49, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/fyquah/de...', 49, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-13 21:30:46 Error: [UnauthorizedException] Unauthorized
+Request URL: /messages
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Component/AuthComponent.php(348): BasicAuthenticate->unauthenticated(Object(CakeRequest), Object(CakeResponse))
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Component/AuthComponent.php(304): AuthComponent->_unauthenticated(Object(MessagesController))
+#2 [internal function]: AuthComponent->startup(Object(MessagesController))
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Utility/ObjectCollection.php(129): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /home/fyquah/dev/php/proj3/lib/Cake/Event/CakeEventManager.php(244): call_user_func(Array, Object(CakeEvent))
+#6 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Controller.php(675): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(187): Controller->startupProcess()
+#8 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#9 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-06-13 21:30:47 Error: [UnauthorizedException] Unauthorized
+Request URL: /messages
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Component/AuthComponent.php(348): BasicAuthenticate->unauthenticated(Object(CakeRequest), Object(CakeResponse))
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Component/AuthComponent.php(304): AuthComponent->_unauthenticated(Object(MessagesController))
+#2 [internal function]: AuthComponent->startup(Object(MessagesController))
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Utility/ObjectCollection.php(129): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /home/fyquah/dev/php/proj3/lib/Cake/Event/CakeEventManager.php(244): call_user_func(Array, Object(CakeEvent))
+#6 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Controller.php(675): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(187): Controller->startupProcess()
+#8 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#9 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}

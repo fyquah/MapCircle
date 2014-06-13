@@ -45,8 +45,9 @@ class AppController extends Controller {
     			"action" => "login"
     		),
     		"authError" => "You have to login to visit that page!",
-            'userModel' => "User"
-    		
+            'userModel' => "User",
+            "loginAction" => array("controller" => "users" , "action" => "index"),
+    		"unauthorizedRedirect" => array("controller" => "users" , "action" => "index")
     	)
     );
 
