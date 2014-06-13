@@ -4,8 +4,13 @@ class MessagesController extends AppController {
 	public $helpers = array('Html', 'Form', 'Session');
     public $components = array('Session');
 
-    public function index(){
-    	$this->redirect(array("controller" => "messages" , "action" => "retrieve"));
+    public function index($id = NULL){
+    	if($id == NULL)
+    		return $this->redirect(array("controller" => "messages" , "action" => "retrieve"));
+    	$post = $this->Message->findById($id);
+    	if(!$post)
+    		throw new NotFoundException("The post with the id " . $id . " cannot be found!");
+    	$this->set("message" , $post);
     }
 
 	public function retrieve(){
@@ -56,6 +61,28 @@ class MessagesController extends AppController {
 				$this->Session->setFlash("an error occured");
 			}
 			$this->redirect(array("controller" => "messages" , "action" => "index"));
+		}
+	}
+
+	public function comment($id = NULL){ 
+		// deal with comment submitting or allowing ppl to submit comments
+		if($id == NULL)
+			return $this->redirect(array("controller" => "messages" , "action" => "retrieve"));
+		$post = $this->Message->findById($id);
+		if(!$post)
+			throw new NotFoundException("the post with the id " . $id . " could not be found!");
+
+		if($this->request->is(array("put" , "post"))){
+			$this->request->data['Comment']['message_id'] = $id;
+
+			if($this->Message->Comment->save($this->request->data))
+				$this->Session->setFlash("Your comment has been submitted!");
+			else
+				$this->Session->setFlash("Failed updating your comment :(");
+			return $this->redirect(array("controller"=> "messages" , "action" => "index" , $id));
+		}
+		else {
+			$this->set("var3" , $post);
 		}
 	}
 
