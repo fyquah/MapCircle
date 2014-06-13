@@ -25,4 +25,10 @@ class UsersController extends AppController {
 		}
 	}
 
+	public function mymessages(){
+		$var3 = $this->User->Message->findAllByuser_id(AuthComponent::User("id"));
+		$this->set("var3" , $var3);
+		$this->set("_serialize" , "var3");
+	}
+
 }

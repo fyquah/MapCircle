@@ -4,6 +4,8 @@ App::uses('AppModel', 'Model');
 App::uses('SimplePasswordHasher', 'Controller/Component/Auth');
 
 class User extends AppModel {
+	public $hasMany = array("Message");
+
 	public $validate = array(
 		"username" => array(
 			"rule1" => array(
