@@ -4,7 +4,11 @@ class MessagesController extends AppController {
 	public $helpers = array('Html', 'Form', 'Session');
     public $components = array('Session');
 
-	public function index(){
+    public function index(){
+    	$this->redirect(array("controller" => "messages" , "action" => "retrieve"));
+    }
+
+	public function retrieve(){
 		if($this->request->is(array('post' , 'put'))){
 			$longtitude = $this->request->data['Message']['lng'];
 			$latitude = $this->request->data['Message']['lat'];
@@ -20,7 +24,7 @@ class MessagesController extends AppController {
 
 			// $original from google website = "SELECT id, ( 6371 * acos( cos( radians('$latitude') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians('$longtitude') ) + sin( radians('$latitude') ) * sin( radians( lat ) ) ) ) AS distance FROM markers HAVING distance < '$radius' ORDER BY distance LIMIT 0 , 20;";
 
-			if($results = $this->Message->query("SELECT * FROM (SELECT id,radius, ( 6371 * acos( cos( radians('$latitude') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians('$longtitude') ) + sin( radians('$latitude') ) * sin( radians( lat ) ) ) ) AS distance FROM messages ORDER BY distance) AS Message WHERE distance < radius;")){
+			if($results = $this->Message->query("SELECT * FROM (SELECT id,radius, ( 6371 * acos( cos( radians($latitude) ) * cos( radians( lat ) ) * cos( radians( lng ) - radians($longtitude) ) + sin( radians($latitude) ) * sin( radians( lat ) ) ) ) AS distance FROM messages ORDER BY distance) AS Message WHERE distance < radius;")){
 				
 				$output = array();
 				$counter = 0;
@@ -32,11 +36,11 @@ class MessagesController extends AppController {
 				$this->set("var3" , $output);
 
 			}
+			else if($results == array()){
+				$this->set("var3" , "no message has been retrieved :(");
+			}
 			else
 				$this->set("var3" , "an error occured");
-
-		}
-		else{
 
 		}
 	}
