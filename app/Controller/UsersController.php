@@ -48,7 +48,7 @@ class UsersController extends AppController {
 				$return['return'] = false;
 			}
 
-			return new CakeResponse(array("type" => "JSON" , "body" => json_encode($return , JSON_NUMERIC_CHECK)));
+			return $this->render_response($return , 200);
 		}
 	}
 
@@ -59,7 +59,7 @@ class UsersController extends AppController {
 			$this->User->create();
 			if(!$this->User->save($this->request->data)){
 				$output['error'] = $this->User->validationErrors;
-				return new CakeResponse(array("type" => "JSON" , "body" => json_encode($output , JSON_NUMERIC_CHECK)));
+				return $this->render_response($output);
 			}
 			else
 				return $this->login();

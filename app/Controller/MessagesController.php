@@ -32,11 +32,11 @@ class MessagesController extends AppController {
     		}
 
     		// generating new token, false if token not updated
-			$temp = $this->_generate_new_token($user_id);
+			$temp = $this->generate_new_token($user_id);
 			$output['return'] = $temp['return'];
 			// whether or not it is false or generated, it is generated :)
 
-			return new CakeResponse(array("type" => "JSON" , "body" => json_encode($output , JSON_NUMERIC_CHECK)));
+			return $this->render_response($output);
     	}
 
     }
@@ -76,11 +76,11 @@ class MessagesController extends AppController {
 				$output['error'] = ("an error occured in retrieving message!");
 
 			// generating new token, false if token not updated
-			$temp = $this->_generate_new_token($user_id);
+			$temp = $this->generate_new_token($user_id);
 			$output['return'] = $temp['return'];
 			// whether or not it is false or generated, it is generated :)
 
-			return new CakeResponse(array("type" => "JSON" , "body" => json_encode($output , JSON_NUMERIC_CHECK)));
+			return $this->render_response($output);
 		}
 	}
 
@@ -106,11 +106,11 @@ class MessagesController extends AppController {
 				$output['error'] = ("An error occured while submitting the new post!");
 
 			// generating new token, false if token not updated
-			$temp = $this->_generate_new_token($user_id);
+			$temp = $this->generate_new_token($user_id);
 			$output['return'] = $temp['return'];
 			// whether or not it is false or generated, it is generated :)
 
-			return new CakeResponse(array("type" => "JSON" , "body" => json_encode($output , JSON_NUMERIC_CHECK)));
+			return $this->render_response($output);
 		}
 	}
 
@@ -141,11 +141,11 @@ class MessagesController extends AppController {
 			}
 
 			// generating new token, false if token not updated
-			$temp = $this->_generate_new_token($user_id);
+			$temp = $this->generate_new_token($user_id);
 			$output['return'] = $temp['return'];
 			// whether or not it is false or generated, it is generated :)
 
-			return new CakeResponse(array("type" => "JSON" , "body" => json_encode($output , JSON_NUMERIC_CHECK)));
+			return $this->render_response($output);
 		}
 
 	}
@@ -179,11 +179,11 @@ class MessagesController extends AppController {
 			}
 
 			// generating new token, false if token not updated
-			$temp = $this->_generate_new_token($user_id);
+			$temp = $this->generate_new_token($user_id);
 			$output['return'] = $temp['return'];
 			// whether or not it is false or generated, it is generated :)
 
-			return new CakeResponse(array("type" => "JSON" , "body" => json_encode($output , JSON_NUMERIC_CHECK)));
+			return $this->render_response($output);
 		}
 	}
 }

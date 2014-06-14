@@ -48,6 +48,9 @@ class AppController extends Controller {
 
     public function beforeFilter(){
         //check token
+
+        //because i am just using auth component for password hashing, have to allow all
+        $this->response->header('Access-Control-Allow-Origin' , '*');
         $this->Auth->allow();
     }
 
@@ -69,7 +72,7 @@ class AppController extends Controller {
         return $post['User']['id']; //if success, returns user_id for query references
     }
 
-    public function _generate_new_token($user_id){ // returns false if failed to generate new token
+    protected function generate_new_token($user_id){ // returns false if failed to generate new token
         $this->LoadModel("User");
 
         $check = $this->User->findByid($user_id);
@@ -93,6 +96,17 @@ class AppController extends Controller {
         }
         else
             return false;
+    }
+
+    protected function render_response($output = NULL , $status_code = 200){
+    	return new CakeResponse(array(
+    		"type" => "JSON" , 
+    		"body" => json_encode($output , JSON_NUMERIC_CHECK),
+    		'header' => array(
+    			'Access-Control-Allow-Origin' => '*',
+    			'statusCode' => $status_code
+    		)
+    	));
     }
 
     /*Using Basic Auth
