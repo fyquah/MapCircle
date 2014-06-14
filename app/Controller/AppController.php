@@ -30,12 +30,75 @@ App::uses('Controller', 'Controller');
  * @package		app.Controller
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
+
+// Some conventions : Consistently return an array with a hash called 'return' consisting of 'username' , 'id' , 'access_token'
+// Don't care whether the update query is successful or not
+// iff token generation fails, _generate_new_token($token) will return false
+
 class AppController extends Controller {
 
 	public $helpers = array('Html', 'Form', 'Session');
+    public $components = array("Session" , "RequestHandler" , 
+        "Auth" => array(
+            "loginRedirect" => false,
+            "logoutRedirect" => false,
+            "unauthorizedRedirect" => false
+        )
+    );
+
+    public function beforeFilter(){
+        //check token
+        $this->Auth->allow();
+    }
+
+    public function _check($token = NULL){
+        $this->loadModel("User");
+
+        if($token == NULL)
+            return new CakeResponse(array("type" => "JSON" , "body" => json_encode(array("error" => "no token in request") , JSON_NUMERIC_CHECK)));
+
+        $post = $this->User->findByToken($token);
+
+        if(!$post)
+            return new CakeResponse(array("type" => "JSON" , "body" => json_encode(array("error" => "invalid token in request") , JSON_NUMERIC_CHECK)));
+
+        $now = time();
+        if($now - strtotime($post['User']['last_login']) >= 7200) //more than two house!
+            return new CakeResponse(array("type" => "JSON" , "body" => json_encode(array("error" => "your token has expired, please login again") , JSON_NUMERIC_CHECK)));
+
+        return $post['User']['id']; //if success, returns user_id for query references
+    }
+
+    public function _generate_new_token($user_id){ // returns false if failed to generate new token
+        $this->LoadModel("User");
+
+        $check = $this->User->findByid($user_id);
+        $save = array();
+        $return = array();
+
+        if($check){
+            $save['id'] = $check['User']['id'];
+            $save['token'] = $this->Auth->password($check['User']['username'] . date('Y-m-d H:i:s'));
+            $save['last_login'] = date('Y-m-d H:i:s');
+
+            if($this->User->save($save)) {
+                $return['return']['token'] = $save['token'];
+                $return['return']['id'] = $save['id'];
+                $return['return']['username'] = $check['User']['username'];
+            }
+            else
+                return false;
+
+            return $return;
+        }
+        else
+            return false;
+    }
+
+    /*Using Basic Auth
     public $components = array('Session' , "RequestHandler" , 
     	"Auth" => array(
-            "authenticate" => array("Basic"),
+            "authenticate" => array("Basic"=>array("fields" => )),
     		"loginRedirect" => array(
     			"controller" => "messages",
     			"action" => "index"
@@ -46,8 +109,7 @@ class AppController extends Controller {
     		),
     		"authError" => "You have to login to visit that page!",
             'userModel' => "User",
-            "loginAction" => array("controller" => "users" , "action" => "index"),
-    		"unauthorizedRedirect" => array("controller" => "users" , "action" => "index")
+            "loginAction" => array("controller" => "users" , "action" => "index")
     	)
     );
 
@@ -55,4 +117,5 @@ class AppController extends Controller {
 		AuthComponent::$sessionKey = false;
         $this->Auth->allow(array("signup"));
 	}
+    */
 }

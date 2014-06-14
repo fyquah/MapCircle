@@ -10,3 +10,7 @@ echo "<br />";
 echo $this->html->link("Comment on a post!" , array("controller" => "messages", "action" => "comment"));
 echo "<br />";
 echo $this->html->link("Click here to view JSON of messages by currently logged in user" , array("controller" => "users", "action" => "mymessages.json"));
+
+echo "<pre>";
+print_r($var3);
+echo "</pre>";
