@@ -6,9 +6,9 @@ class UsersController extends AppController {
 	// 	$this->Auth->allow("index");
 	// }
 
-	// public function index(){
-
-	// }
+	public function index(){
+		
+	}
 
 	public function login(){
 		if($this->request->is("post")){
