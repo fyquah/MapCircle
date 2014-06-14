@@ -54,7 +54,11 @@ class User extends AppModel {
 			),
 			'rule2' => array(
 				'rule' => 'email',
-				'please enter a valid email!'
+				"message" => 'please enter a valid email!'
+			),
+			'rule3' => array(
+				'rule' => "isUnique",
+				"message" => "email is already taken!"			
 			)
 		)
 

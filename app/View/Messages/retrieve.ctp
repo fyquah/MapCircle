@@ -4,7 +4,7 @@
 
 if(isset($var3))
 	print_r($var3);
-echo $this->Form->create("Message" , array("action" => "retrieve.json"));
+echo $this->Form->create("Message" , array("action" => "retrieve"));
 echo $this->Form->input("Message.lat");
 echo $this->Form->input("Message.lng");
 echo $this->Form->input("access_token");

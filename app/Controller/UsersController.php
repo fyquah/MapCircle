@@ -37,11 +37,16 @@ class UsersController extends AppController {
 					$return['return']['id'] = $check['User']['id'];
 					$return['return']['username'] = $check['User']['username'];
 				}
-				else
-					$return['return'] = "error : cannot log user in, please check your credentials again!";
+				else {
+					$return['error'] = "Error obtaining token, please try again";
+					$return['return'] = false;
+				}
+			
 			}
-			else
-				$return['return'] = "error : check your username and password credentials!";
+			else{
+				$return['error'] = "Check your user credentials again";
+				$return['return'] = false;
+			}
 
 			return new CakeResponse(array("type" => "JSON" , "body" => json_encode($return , JSON_NUMERIC_CHECK)));
 		}
@@ -49,12 +54,15 @@ class UsersController extends AppController {
 
 	public function signup(){
 		if($this->request->is("post")){
+			$output = array();
+
 			$this->User->create();
-			if($this->User->save($this->request->data))
-				$this->Session->setFlash("User sign up successful!");
+			if(!$this->User->save($this->request->data)){
+				$output['error'] = $this->User->validationErrors;
+				return new CakeResponse(array("type" => "JSON" , "body" => json_encode($output , JSON_NUMERIC_CHECK)));
+			}
 			else
-				$this->Session->setFlash("Sign up failed!");
-			$this->set("var3" , $this->request->data);
+				return $this->login();
 		}
 	}
 

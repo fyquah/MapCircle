@@ -1,6 +1,6 @@
 <?php
 
-echo $this->Form->create("Message" , array("action" => "submit.json"));
+echo $this->Form->create("Message" , array("action" => "submit"));
 echo $this->Form->input("message");
 echo $this->Form->input("lat");
 echo $this->Form->input("lng");
