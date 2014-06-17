@@ -70,7 +70,7 @@ class AppController extends Controller {
             return new CakeResponse(array("type" => "JSON" , "body" => json_encode(array("error" => "invalid token in request") , JSON_NUMERIC_CHECK)));
 
         $now = time();
-        if($now - strtotime($post['User']['last_login']) >= 7200) //more than two house!
+        if($now - intval(strtotime($post['User']['last_login'])) >= 7200) //more than two house!
             return new CakeResponse(array("type" => "JSON" , "body" => json_encode(array("error" => "your token has expired, please login again") , JSON_NUMERIC_CHECK)));
 
         return $post['User']['id']; //if success, returns user_id for query references
@@ -93,8 +93,7 @@ class AppController extends Controller {
                 $return['return']['id'] = $save['id'];
                 $return['return']['username'] = $check['User']['username'];
                 // once a new token generated, it is automagically updated in firebase
-                
-                $this->firebase->set("./users/" . $user_id . "/access_token/" , $save['token']);
+                //$this->firebase->set("./users/" . $user_id . "/access_token/" , $return['return']['token']);
             }
             else
                 return false;
