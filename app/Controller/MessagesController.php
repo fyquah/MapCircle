@@ -14,7 +14,7 @@ function binary_search($haystack , $needle){
 }
 
 function expired($created_date , $period){
-	return TIME() > (strtotime(intval($created_date)) + intval($period));
+	return TIME() > intval(strtotime($created_date)) + intval($period);
 }
 
 class MessagesController extends AppController {
@@ -77,34 +77,36 @@ class MessagesController extends AppController {
 
 			$output = array();
 
-			if($results = $this->Message->query("SELECT * FROM (SELECT id , created , radius ,user_id ,period, ( 6371 * acos( cos( radians($latitude) ) * cos( radians( lat ) ) * cos( radians( lng ) - radians($longtitude) ) + sin( radians($latitude) ) * sin( radians( lat ) ) ) ) AS distance FROM messages ORDER BY distance) AS Message WHERE distance < radius ;")){
+			if($results = $this->Message->query("SELECT * FROM (SELECT id , created , radius ,user_id ,period, ( 6371 * acos( cos( radians($latitude) ) * cos( radians( lat ) ) * cos( radians( lng ) - radians($longtitude) ) + sin( radians($latitude) ) * sin( radians( lat ) ) ) ) AS distance FROM messages ORDER BY distance) AS Message WHERE distance < radius AND user_id != $user_id ;")){
 
-				$firebase = new Firebase(FIREBASE_URI); // connect to the firebase server
-
-				$arr = array();					// array of message id to be pushed into server
 				$already_have = array();		// array of message id that is already present in inbox
 				$flag = false;
 
-				foreach($results as $result)
-					if($result['Message']['user_id'] == $user_id)
-						array_push($arr , (intval($result['Message']['id'])));
+				$temp = $this->firebase->get('/users/' . $user_id . '/inbox/');
+				
 
-				$temp = $firebase->get('/users/' . $user_id . '/inbox/');
-
-				if($temp == NULL || strtoupper($temp) == 'NULL'){
-					for($i = 0 ; $i < count($arr) ; $i++)
-						$firebase->push("/users/" . $user_id . "/inbox/" , $arr[$i]);
+				// (!$temp) indicates that there are no records available at that URI
+				if(strtolower($temp) == 'null'){
+					$output['lol'] = 'code was here';
+					for($i = 0 ; $i < count($results) ; $i++)
+						if(!expired($results[$i]['Message']['created'] , $results[$i]['Message']['period'])) {
+							$this->firebase->push("/users/" . $user_id . "/inbox/" , intval($results[$i]['Message']['id']));
+							$flag = true;
+						}
 				}
+
 				else {
+
 					$temp = json_decode($temp);
 					foreach($temp as $key => $value)
 						array_push($already_have, intval($value));
 
 					sort($already_have);
 
-					for($i = 0 ; $i < count($arr) ; $i++)
-						if(!expired($results[$i]['Message']['created'] , $results[$i]['Message']['period'])  && !binary_search($already_have , $arr[$i])){
-							$firebase->push('/users/' . $user_id . '/inbox/' , $arr[$i]);
+
+					for($i = 0 ; $i < count($results) ; $i++)
+						if(!expired($results[$i]['Message']['created'] , $results[$i]['Message']['period']) && !binary_search($already_have , intval($result[$i]['Message']['id']))){
+							$this->firebase->push('/users/' . $user_id . '/inbox/' , intval($result[$i]['Message']['id']));
 							$flag = true;
 						}
 				}
@@ -149,16 +151,16 @@ class MessagesController extends AppController {
 				
 				$message = $this->Message->findByid($this->Message->id);
 				//push the message into firebase
-				$firebase = new Firebase(FIREBASE_URI);
-				$firebase->set("/messages/" . $this->Message->id . "/", $message);
-				$output['notice'] += " and is added into firebase database";
+
+				$this->firebase->set("/messages/" . $this->Message->id . "/", $message);
+
 				//automatically add the message into my_messages
-				$firebase->push("/users/" . $user_id . "/outbox/" , intval($this->Message->id));
-				$output['notice'] += " and is added into user's firebase outbox";
+				$this->firebase->push("/users/" . $user_id . "/outbox/" , intval($this->Message->id));
+
 			}
 
 			else
-				$output['error'] = ("An error occured while submitting the new post!");
+				$output['error'] = "An error occured while submitting the new post!";
 
 			// generating new token, false if token not updated
 			$temp = $this->generate_new_token($user_id);
@@ -195,8 +197,8 @@ class MessagesController extends AppController {
 					$response = $this->Message->Response->findByid($this->Message->Response->id);
 
 					$output['notice'] = "Your comment has been submitted!";
-					$firebase = new Firebase(FIREBASE_URI);
-					$firebase->push("/messages/" . $message_id . "/Response/" , $response['Response']);
+
+					$this->firebase->push("/messages/" . $message_id . "/Response/" , $response['Response']);
 				}
 
 				else

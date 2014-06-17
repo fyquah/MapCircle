@@ -63,7 +63,7 @@ class Message extends AppModel{
 			),
 			"rule3" => array(
 				"rule" => "numeric",
-				"message" => "radius must be a valid number!"
+				"message" => "period must be a valid number!"
 			)
 		),
 
@@ -82,7 +82,7 @@ class Message extends AppModel{
 
 	public function beforeSave($options = array()) {
 	    if (isset($this->data[$this->alias]['period'])) {
-	        $this->data[$this->alias]['period'] = $this->Data[$this->alias]['period'] * 60; 
+	        $this->data[$this->alias]['period'] = $this->data[$this->alias]['period'] * 60; 
 	    }
    		return true;
 	}

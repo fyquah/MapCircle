@@ -6,6 +6,8 @@ class UsersController extends AppController {
 	// 	$this->Auth->allow("index");
 	// }
 
+	
+
 	public function index(){
 		
 	}
@@ -24,8 +26,7 @@ class UsersController extends AppController {
 
 			if($this->User->save($save)){
 
-				$firebase = new Firebase(FIREBASE_URI);
-				$firebase->delete('users/' . $user_id);
+				$this->firebase->delete('users/' . $user_id);
 				$return = array("notice" => "successfully logged out!");
 			}
 			else
@@ -65,12 +66,10 @@ class UsersController extends AppController {
 					$active_user = array();
 					$active_user['user_id'] = $check['User']['id'];
 
-					$firebase = new Firebase(FIREBASE_URI);
-					$firebase->update('users' , array(
-						$save['id'] => array(		
+					//$firebase = new Firebase(FIREBASE_URI);
+					$this->firebase->update('users/' . $save['id'] . '/' , array(	
 							'access_token' => ($save['token']),
 							'username' => $check['User']['username']
-						)
 					));
 					return $this->render_response($return , 200);
 

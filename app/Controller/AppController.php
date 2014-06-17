@@ -39,6 +39,7 @@ App::uses('Controller', 'Controller');
 
 class AppController extends Controller {
 
+    public $firebase;
 	public $helpers = array('Html', 'Form', 'Session');
     public $components = array("Session" , "RequestHandler" , 
         "Auth" => array(
@@ -52,6 +53,7 @@ class AppController extends Controller {
         //check token
 
         //because i am just using auth component for password hashing, have to allow all
+        $this->firebase = new Firebase(FIREBASE_URI);
         $this->response->header('Access-Control-Allow-Origin' , '*');
         $this->Auth->allow();
     }
@@ -91,8 +93,8 @@ class AppController extends Controller {
                 $return['return']['id'] = $save['id'];
                 $return['return']['username'] = $check['User']['username'];
                 // once a new token generated, it is automagically updated in firebase
-                $firebase = new Firebase(FIREBASE_URI);
-                $firebase->set("./users/" . $user_id . "/access_token/" , $save['token']);
+                
+                $this->firebase->set("./users/" . $user_id . "/access_token/" , $save['token']);
             }
             else
                 return false;
