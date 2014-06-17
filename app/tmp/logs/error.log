@@ -1731,3 +1731,793 @@ Stack Trace:
 #8 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
 #9 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #10 {main}
+2014-06-13 21:51:57 Error: [UnauthorizedException] Unauthorized
+Request URL: /messages
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Component/AuthComponent.php(348): BasicAuthenticate->unauthenticated(Object(CakeRequest), Object(CakeResponse))
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Component/AuthComponent.php(304): AuthComponent->_unauthenticated(Object(MessagesController))
+#2 [internal function]: AuthComponent->startup(Object(MessagesController))
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Utility/ObjectCollection.php(129): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /home/fyquah/dev/php/proj3/lib/Cake/Event/CakeEventManager.php(244): call_user_func(Array, Object(CakeEvent))
+#6 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Controller.php(675): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(187): Controller->startupProcess()
+#8 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#9 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-06-13 21:52:04 Error: Fatal Error (4): syntax error, unexpected '}' in [/home/fyquah/dev/php/proj3/app/Controller/UsersController.php, line 30]
+2014-06-13 21:52:04 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /users/mymessage.json
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/fyquah/de...', 30)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/fyquah/de...', 30, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/fyquah/de...', 30, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-13 21:55:13 Error: [MissingActionException] Action UsersController::mymessage() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'mymessage',
+)
+Request URL: /users/mymessage.json
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-06-13 21:55:32 Error: Fatal Error (1): Function name must be a string in [/home/fyquah/dev/php/proj3/app/View/Users/json/mymessages.ctp, line 2]
+2014-06-13 21:55:32 Error: [FatalErrorException] Function name must be a string
+Request URL: /users/mymessages.json
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Function name m...', '/home/fyquah/de...', 2)
+#1 [internal function]: ErrorHandler::handleError(1, 'Function name m...', '/home/fyquah/de...', 2, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Function name m...', '/home/fyquah/de...', 2, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-13 22:33:11 Error: [UnauthorizedException] Unauthorized
+Request URL: /messages
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Component/AuthComponent.php(348): BasicAuthenticate->unauthenticated(Object(CakeRequest), Object(CakeResponse))
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Component/AuthComponent.php(304): AuthComponent->_unauthenticated(Object(MessagesController))
+#2 [internal function]: AuthComponent->startup(Object(MessagesController))
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Utility/ObjectCollection.php(129): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /home/fyquah/dev/php/proj3/lib/Cake/Event/CakeEventManager.php(244): call_user_func(Array, Object(CakeEvent))
+#6 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Controller.php(675): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(187): Controller->startupProcess()
+#8 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#9 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-06-14 13:22:49 Error: [UnauthorizedException] Unauthorized
+Request URL: /messages
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Component/AuthComponent.php(348): BasicAuthenticate->unauthenticated(Object(CakeRequest), Object(CakeResponse))
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Component/AuthComponent.php(304): AuthComponent->_unauthenticated(Object(MessagesController))
+#2 [internal function]: AuthComponent->startup(Object(MessagesController))
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Utility/ObjectCollection.php(129): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /home/fyquah/dev/php/proj3/lib/Cake/Event/CakeEventManager.php(244): call_user_func(Array, Object(CakeEvent))
+#6 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Controller.php(675): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(187): Controller->startupProcess()
+#8 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#9 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-06-14 13:24:25 Error: Fatal Error (4): syntax error, unexpected 'print_r' (T_STRING), expecting ',' or ';' in [/home/fyquah/dev/php/proj3/app/View/Messages/index.ctp, line 15]
+2014-06-14 13:24:25 Error: [FatalErrorException] syntax error, unexpected 'print_r' (T_STRING), expecting ',' or ';'
+Request URL: /messages
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/fyquah/de...', 15)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/fyquah/de...', 15, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/fyquah/de...', 15, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-14 13:26:47 Error: [MissingActionException] Action MessagesController::1() could not be found.
+Exception Attributes: array (
+  'controller' => 'MessagesController',
+  'action' => '1',
+)
+Request URL: /messages/1
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#2 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-06-14 13:48:16 Error: Fatal Error (4): syntax error, unexpected ';' in [/home/fyquah/dev/php/proj3/app/Controller/MessagesController.php, line 5]
+2014-06-14 13:48:16 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /messages/index/cool=1?name=1
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/fyquah/de...', 5)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/fyquah/de...', 5, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/fyquah/de...', 5, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-14 13:53:42 Error: Fatal Error (1): Call to undefined function _serialize() in [/home/fyquah/dev/php/proj3/app/Controller/MessagesController.php, line 23]
+2014-06-14 13:53:42 Error: [FatalErrorException] Call to undefined function _serialize()
+Request URL: /messages/view.json
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/home/fyquah/de...', 23)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/home/fyquah/de...', 23, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/home/fyquah/de...', 23, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-14 14:22:48 Error: [UnauthorizedException] Unauthorized
+Request URL: /messages
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Component/AuthComponent.php(348): BasicAuthenticate->unauthenticated(Object(CakeRequest), Object(CakeResponse))
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Component/AuthComponent.php(304): AuthComponent->_unauthenticated(Object(MessagesController))
+#2 [internal function]: AuthComponent->startup(Object(MessagesController))
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Utility/ObjectCollection.php(129): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /home/fyquah/dev/php/proj3/lib/Cake/Event/CakeEventManager.php(244): call_user_func(Array, Object(CakeEvent))
+#6 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Controller.php(675): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(187): Controller->startupProcess()
+#8 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#9 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-06-14 14:23:19 Error: [UnauthorizedException] Unauthorized
+Request URL: /messages
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Component/AuthComponent.php(348): BasicAuthenticate->unauthenticated(Object(CakeRequest), Object(CakeResponse))
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Component/AuthComponent.php(304): AuthComponent->_unauthenticated(Object(MessagesController))
+#2 [internal function]: AuthComponent->startup(Object(MessagesController))
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Utility/ObjectCollection.php(129): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /home/fyquah/dev/php/proj3/lib/Cake/Event/CakeEventManager.php(244): call_user_func(Array, Object(CakeEvent))
+#6 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Controller.php(675): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(187): Controller->startupProcess()
+#8 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#9 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-06-14 14:24:55 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [/home/fyquah/dev/php/proj3/app/Controller/AppController.php, line 50]
+2014-06-14 14:24:55 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+Request URL: /messages
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/fyquah/de...', 50)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/fyquah/de...', 50, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/fyquah/de...', 50, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-14 14:25:02 Error: [UnauthorizedException] Unauthorized
+Request URL: /messages
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Component/AuthComponent.php(348): BasicAuthenticate->unauthenticated(Object(CakeRequest), Object(CakeResponse))
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Component/AuthComponent.php(304): AuthComponent->_unauthenticated(Object(MessagesController))
+#2 [internal function]: AuthComponent->startup(Object(MessagesController))
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Utility/ObjectCollection.php(129): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /home/fyquah/dev/php/proj3/lib/Cake/Event/CakeEventManager.php(244): call_user_func(Array, Object(CakeEvent))
+#6 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Controller.php(675): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(187): Controller->startupProcess()
+#8 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#9 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-06-14 14:27:15 Error: [UnauthorizedException] Unauthorized
+Request URL: /messages
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Component/AuthComponent.php(348): BasicAuthenticate->unauthenticated(Object(CakeRequest), Object(CakeResponse))
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Component/AuthComponent.php(304): AuthComponent->_unauthenticated(Object(MessagesController))
+#2 [internal function]: AuthComponent->startup(Object(MessagesController))
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Utility/ObjectCollection.php(129): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /home/fyquah/dev/php/proj3/lib/Cake/Event/CakeEventManager.php(244): call_user_func(Array, Object(CakeEvent))
+#6 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Controller.php(675): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(187): Controller->startupProcess()
+#8 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#9 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-06-14 14:29:11 Error: [UnauthorizedException] Unauthorized
+Request URL: /messages
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Component/AuthComponent.php(348): BasicAuthenticate->unauthenticated(Object(CakeRequest), Object(CakeResponse))
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Component/AuthComponent.php(304): AuthComponent->_unauthenticated(Object(MessagesController))
+#2 [internal function]: AuthComponent->startup(Object(MessagesController))
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Utility/ObjectCollection.php(129): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /home/fyquah/dev/php/proj3/lib/Cake/Event/CakeEventManager.php(244): call_user_func(Array, Object(CakeEvent))
+#6 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Controller.php(675): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(187): Controller->startupProcess()
+#8 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#9 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-06-14 14:58:58 Error: [MissingActionException] Action UsersController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'index',
+)
+Request URL: /
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-06-14 14:59:25 Error: [MissingViewException] View file "/home/fyquah/dev/php/proj3/app/View/Users/login.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/home/fyquah/dev/php/proj3/app/View/Users/login.ctp',
+)
+Request URL: /
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/View/View.php(468): View->_getViewFileName(NULL)
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Controller.php(954): View->render(NULL, NULL)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(198): Controller->render()
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-06-14 15:04:53 Error: Fatal Error (4): syntax error, unexpected ')' in [/home/fyquah/dev/php/proj3/app/Controller/UsersController.php, line 45]
+2014-06-14 15:04:53 Error: [FatalErrorException] syntax error, unexpected ')'
+Request URL: /
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/fyquah/de...', 45)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/fyquah/de...', 45, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/fyquah/de...', 45, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-14 15:17:29 Error: Fatal Error (1): Call to a member function password() on a non-object in [/home/fyquah/dev/php/proj3/app/Controller/UsersController.php, line 23]
+2014-06-14 15:17:29 Error: [FatalErrorException] Call to a member function password() on a non-object
+Request URL: /
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/fyquah/de...', 23)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/fyquah/de...', 23, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/fyquah/de...', 23, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-14 15:18:09 Error: Fatal Error (1): Call to a member function password() on a non-object in [/home/fyquah/dev/php/proj3/app/Controller/UsersController.php, line 23]
+2014-06-14 15:18:09 Error: [FatalErrorException] Call to a member function password() on a non-object
+Request URL: /
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/fyquah/de...', 23)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/fyquah/de...', 23, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/fyquah/de...', 23, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-14 15:18:23 Error: Fatal Error (1): Call to a member function password() on a non-object in [/home/fyquah/dev/php/proj3/app/Controller/UsersController.php, line 23]
+2014-06-14 15:18:23 Error: [FatalErrorException] Call to a member function password() on a non-object
+Request URL: /
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/fyquah/de...', 23)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/fyquah/de...', 23, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/fyquah/de...', 23, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-14 15:33:39 Error: Fatal Error (4): syntax error, unexpected 'else' (T_ELSE) in [/home/fyquah/dev/php/proj3/app/Controller/MessagesController.php, line 23]
+2014-06-14 15:33:39 Error: [FatalErrorException] syntax error, unexpected 'else' (T_ELSE)
+Request URL: /messages/retrieve.json
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/fyquah/de...', 23)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/fyquah/de...', 23, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/fyquah/de...', 23, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-14 15:47:31 Error: Fatal Error (4): syntax error, unexpected 'else' (T_ELSE) in [/home/fyquah/dev/php/proj3/app/Controller/MessagesController.php, line 23]
+2014-06-14 15:47:31 Error: [FatalErrorException] syntax error, unexpected 'else' (T_ELSE)
+Request URL: /messages/retrieve.json
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/fyquah/de...', 23)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/fyquah/de...', 23, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/fyquah/de...', 23, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-14 15:47:33 Error: Fatal Error (4): syntax error, unexpected 'else' (T_ELSE) in [/home/fyquah/dev/php/proj3/app/Controller/MessagesController.php, line 23]
+2014-06-14 15:47:33 Error: [FatalErrorException] syntax error, unexpected 'else' (T_ELSE)
+Request URL: /messages/retrieve
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/fyquah/de...', 23)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/fyquah/de...', 23, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/fyquah/de...', 23, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-14 15:49:19 Error: [MissingControllerException] Controller class RetrieveController could not be found.
+Exception Attributes: array (
+  'class' => 'RetrieveController',
+  'plugin' => NULL,
+)
+Request URL: /retrieve
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-14 16:35:16 Error: Fatal Error (4): syntax error, unexpected '[' in [/home/fyquah/dev/php/proj3/app/Controller/MessagesController.php, line 70]
+2014-06-14 16:35:16 Error: [FatalErrorException] syntax error, unexpected '['
+Request URL: /messages/retrieve
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/fyquah/de...', 70)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/fyquah/de...', 70, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/fyquah/de...', 70, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-14 16:37:55 Error: Fatal Error (4): syntax error, unexpected ';' in [/home/fyquah/dev/php/proj3/app/Controller/AppController.php, line 67]
+2014-06-14 16:37:55 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /messages/retrieve
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/fyquah/de...', 67)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/fyquah/de...', 67, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/fyquah/de...', 67, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-14 17:23:46 Error: [MissingActionException] Action UsersController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'index',
+)
+Request URL: /
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-06-14 17:49:44 Error: Fatal Error (4): syntax error, unexpected ')' in [/home/fyquah/dev/php/proj3/app/Controller/UsersController.php, line 61]
+2014-06-14 17:49:44 Error: [FatalErrorException] syntax error, unexpected ')'
+Request URL: /users/signup
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/fyquah/de...', 61)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/fyquah/de...', 61, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/fyquah/de...', 61, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-14 17:50:42 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/home/fyquah/dev/php/proj3/app/Controller/UsersController.php, line 61]
+2014-06-14 17:50:42 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /users/signup
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/fyquah/de...', 61)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/fyquah/de...', 61, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/fyquah/de...', 61, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-14 21:41:38 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/home/fyquah/dev/php/proj3/app/Controller/AppController.php, line 104]
+2014-06-14 21:41:38 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/fyquah/de...', 104)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/fyquah/de...', 104, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/fyquah/de...', 104, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-14 21:41:57 Error: Fatal Error (4): syntax error, unexpected ';' in [/home/fyquah/dev/php/proj3/app/Controller/AppController.php, line 108]
+2014-06-14 21:41:57 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/fyquah/de...', 108)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/fyquah/de...', 108, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/fyquah/de...', 108, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-14 21:42:50 Error: Fatal Error (1): Call to undefined function _render_response() in [/home/fyquah/dev/php/proj3/app/Controller/UsersController.php, line 51]
+2014-06-14 21:42:50 Error: [FatalErrorException] Call to undefined function _render_response()
+Request URL: /users/login
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/home/fyquah/de...', 51)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/home/fyquah/de...', 51, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/home/fyquah/de...', 51, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-14 21:43:05 Error: Fatal Error (1): Call to undefined function _render_response() in [/home/fyquah/dev/php/proj3/app/Controller/UsersController.php, line 51]
+2014-06-14 21:43:05 Error: [FatalErrorException] Call to undefined function _render_response()
+Request URL: /users/login
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/home/fyquah/de...', 51)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/home/fyquah/de...', 51, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/home/fyquah/de...', 51, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-17 14:13:08 Error: Fatal Error (64): require_once() [<a href='http://php.net/function.require'>function.require</a>]: Failed opening required '/home/fyquah/dev/php/proj3/app/Controller/firebase/firbase.php' (include_path='/home/fyquah/dev/php/proj3/lib:.:/usr/share/php:/usr/share/pear') in [/home/fyquah/dev/php/proj3/app/Controller/AppController.php, line 2]
+2014-06-17 14:13:08 Error: [FatalErrorException] require_once() [<a href='http://php.net/function.require'>function.require</a>]: Failed opening required '/home/fyquah/dev/php/proj3/app/Controller/firebase/firbase.php' (include_path='/home/fyquah/dev/php/proj3/lib:.:/usr/share/php:/usr/share/pear')
+Request URL: /messages/retrieve
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'require_once() ...', '/home/fyquah/de...', 2)
+#1 [internal function]: ErrorHandler::handleError(64, 'require_once() ...', '/home/fyquah/de...', 2, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'require_once() ...', '/home/fyquah/de...', 2, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-17 14:14:25 Error: Fatal Error (64): require_once() [<a href='http://php.net/function.require'>function.require</a>]: Failed opening required '/home/fyquah/dev/php/proj3/app/Controller/firebase/firbase.php' (include_path='/home/fyquah/dev/php/proj3/lib:.:/usr/share/php:/usr/share/pear') in [/home/fyquah/dev/php/proj3/app/Controller/AppController.php, line 2]
+2014-06-17 14:14:25 Error: [FatalErrorException] require_once() [<a href='http://php.net/function.require'>function.require</a>]: Failed opening required '/home/fyquah/dev/php/proj3/app/Controller/firebase/firbase.php' (include_path='/home/fyquah/dev/php/proj3/lib:.:/usr/share/php:/usr/share/pear')
+Request URL: /messages/retrieve
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'require_once() ...', '/home/fyquah/de...', 2)
+#1 [internal function]: ErrorHandler::handleError(64, 'require_once() ...', '/home/fyquah/de...', 2, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'require_once() ...', '/home/fyquah/de...', 2, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-17 14:46:06 Error: Fatal Error (4): syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in [/home/fyquah/dev/php/proj3/app/Controller/UsersController.php, line 64]
+2014-06-17 14:46:06 Error: [FatalErrorException] syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING)
+Request URL: /users/logout
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/fyquah/de...', 64)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/fyquah/de...', 64, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/fyquah/de...', 64, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-17 14:47:00 Error: Fatal Error (4): syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in [/home/fyquah/dev/php/proj3/app/Controller/UsersController.php, line 64]
+2014-06-17 14:47:00 Error: [FatalErrorException] syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING)
+Request URL: /users/login
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/fyquah/de...', 64)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/fyquah/de...', 64, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/fyquah/de...', 64, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-17 14:48:53 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'user_id VALUES7' at line 1
+Request URL: /users/login
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('INSERT INTO act...', Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('INSERT INTO act...', Array, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(537): DboSource->fetchAll('INSERT INTO act...')
+#4 [internal function]: DboSource->query('INSERT INTO act...')
+#5 /home/fyquah/dev/php/proj3/lib/Cake/Model/Model.php(3309): call_user_func_array(Array, Array)
+#6 /home/fyquah/dev/php/proj3/app/Controller/UsersController.php(64): Model->query('INSERT INTO act...')
+#7 [internal function]: UsersController->login()
+#8 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-06-17 14:49:45 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'user_id VALUES 7' at line 1
+Request URL: /users/login
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('INSERT INTO act...', Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('INSERT INTO act...', Array, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(537): DboSource->fetchAll('INSERT INTO act...')
+#4 [internal function]: DboSource->query('INSERT INTO act...')
+#5 /home/fyquah/dev/php/proj3/lib/Cake/Model/Model.php(3309): call_user_func_array(Array, Array)
+#6 /home/fyquah/dev/php/proj3/app/Controller/UsersController.php(64): Model->query('INSERT INTO act...')
+#7 [internal function]: UsersController->login()
+#8 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-06-17 14:53:54 Error: Fatal Error (4): syntax error, unexpected '$firebase' (T_VARIABLE) in [/home/fyquah/dev/php/proj3/app/Controller/UsersController.php, line 65]
+2014-06-17 14:53:54 Error: [FatalErrorException] syntax error, unexpected '$firebase' (T_VARIABLE)
+Request URL: /users/login
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/fyquah/de...', 65)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/fyquah/de...', 65, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/fyquah/de...', 65, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-17 14:54:02 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''2a04e254eef6ba4366aa6efd73a835fa6be5e209'')' at line 1
+Request URL: /users/login
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('INSERT INTO act...', Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('INSERT INTO act...', Array, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(537): DboSource->fetchAll('INSERT INTO act...')
+#4 [internal function]: DboSource->query('INSERT INTO act...')
+#5 /home/fyquah/dev/php/proj3/lib/Cake/Model/Model.php(3309): call_user_func_array(Array, Array)
+#6 /home/fyquah/dev/php/proj3/app/Controller/UsersController.php(64): Model->query('INSERT INTO act...')
+#7 [internal function]: UsersController->login()
+#8 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-06-17 16:44:18 Error: Fatal Error (4): syntax error, unexpected '}' in [/home/fyquah/dev/php/proj3/app/Controller/MessagesController.php, line 124]
+2014-06-17 16:44:18 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /messages/retrieve
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/fyquah/de...', 124)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/fyquah/de...', 124, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/fyquah/de...', 124, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-17 16:44:31 Error: Fatal Error (4): syntax error, unexpected '=' in [/home/fyquah/dev/php/proj3/app/Controller/MessagesController.php, line 121]
+2014-06-17 16:44:31 Error: [FatalErrorException] syntax error, unexpected '='
+Request URL: /messages/retrieve
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/fyquah/de...', 121)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/fyquah/de...', 121, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/fyquah/de...', 121, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-17 16:51:24 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1305 FUNCTION proj3.user_id does not exist
+Request URL: /messages/submit
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT * FROM (...', Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT * FROM (...', Array, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(537): DboSource->fetchAll('SELECT * FROM (...')
+#4 [internal function]: DboSource->query('SELECT * FROM (...')
+#5 /home/fyquah/dev/php/proj3/lib/Cake/Model/Model.php(3309): call_user_func_array(Array, Array)
+#6 /home/fyquah/dev/php/proj3/app/Controller/MessagesController.php(123): Model->query('SELECT * FROM (...')
+#7 [internal function]: MessagesController->submit()
+#8 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(MessagesController), Array)
+#9 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#11 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-06-17 16:52:40 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1305 FUNCTION proj3.user_id does not exist
+Request URL: /messages/submit
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT * FROM (...', Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT * FROM (...', Array, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(537): DboSource->fetchAll('SELECT * FROM (...')
+#4 [internal function]: DboSource->query('SELECT * FROM (...')
+#5 /home/fyquah/dev/php/proj3/lib/Cake/Model/Model.php(3309): call_user_func_array(Array, Array)
+#6 /home/fyquah/dev/php/proj3/app/Controller/MessagesController.php(123): Model->query('SELECT * FROM (...')
+#7 [internal function]: MessagesController->submit()
+#8 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(MessagesController), Array)
+#9 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#11 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-06-17 16:54:16 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '( 6371 * acos( cos( radians(1) ) * cos( radians( lat ) ) * cos( radians( lng ) -' at line 1
+Request URL: /messages/submit
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT * FROM (...', Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT * FROM (...', Array, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(537): DboSource->fetchAll('SELECT * FROM (...')
+#4 [internal function]: DboSource->query('SELECT * FROM (...')
+#5 /home/fyquah/dev/php/proj3/lib/Cake/Model/Model.php(3309): call_user_func_array(Array, Array)
+#6 /home/fyquah/dev/php/proj3/app/Controller/MessagesController.php(123): Model->query('SELECT * FROM (...')
+#7 [internal function]: MessagesController->submit()
+#8 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(MessagesController), Array)
+#9 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#11 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-06-17 19:16:58 Error: [MissingActionException] Action MessagesController::retrieve() could not be found.
+Exception Attributes: array (
+  'controller' => 'MessagesController',
+  'action' => 'retrieve',
+)
+Request URL: /messages/retrieve
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#2 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-06-17 19:17:23 Error: [MissingTableException] Table active_users for model ActiveUser was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'active_users',
+  'class' => 'ActiveUser',
+  'ds' => 'default',
+)
+Request URL: /users/login
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Model/Model.php(3501): Model->setSource('active_users')
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Model/Model.php(1357): Model->getDataSource()
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Model/Model.php(1541): Model->schema()
+#3 /home/fyquah/dev/php/proj3/app/Controller/UsersController.php(71): Model->create()
+#4 [internal function]: UsersController->login()
+#5 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#6 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#7 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#8 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-06-17 19:24:07 Error: [MissingActionException] Action MessagesController::retrieve() could not be found.
+Exception Attributes: array (
+  'controller' => 'MessagesController',
+  'action' => 'retrieve',
+)
+Request URL: /messages/retrieve
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#2 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-06-17 19:24:39 Error: [MissingActionException] Action MessagesController::retrieve() could not be found.
+Exception Attributes: array (
+  'controller' => 'MessagesController',
+  'action' => 'retrieve',
+)
+Request URL: /messages/retrieve
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#2 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-06-17 19:24:48 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '( 6371 * acos( cos( radians(1) ) * cos( radians( lat ) ) * cos( radians( lng ) -' at line 1
+Request URL: /messages/update_location
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT id, user...', Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT id, user...', Array, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(537): DboSource->fetchAll('SELECT id, user...')
+#4 [internal function]: DboSource->query('SELECT id, user...')
+#5 /home/fyquah/dev/php/proj3/lib/Cake/Model/Model.php(3309): call_user_func_array(Array, Array)
+#6 /home/fyquah/dev/php/proj3/app/Controller/MessagesController.php(77): Model->query('SELECT id, user...')
+#7 [internal function]: MessagesController->update_location()
+#8 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(MessagesController), Array)
+#9 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#11 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-06-17 19:25:34 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '( 6371 * acos( cos( radians(1) ) * cos( radians( lat ) ) * cos( radians( lng ) -' at line 1
+Request URL: /messages/update_location
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT * FROM (...', Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT * FROM (...', Array, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(537): DboSource->fetchAll('SELECT * FROM (...')
+#4 [internal function]: DboSource->query('SELECT * FROM (...')
+#5 /home/fyquah/dev/php/proj3/lib/Cake/Model/Model.php(3309): call_user_func_array(Array, Array)
+#6 /home/fyquah/dev/php/proj3/app/Controller/MessagesController.php(77): Model->query('SELECT * FROM (...')
+#7 [internal function]: MessagesController->update_location()
+#8 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(MessagesController), Array)
+#9 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#11 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-06-17 19:28:46 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'radius' in 'where clause'
+Request URL: /messages/update_location
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT * FROM (...', Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT * FROM (...', Array, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(537): DboSource->fetchAll('SELECT * FROM (...')
+#4 [internal function]: DboSource->query('SELECT * FROM (...')
+#5 /home/fyquah/dev/php/proj3/lib/Cake/Model/Model.php(3309): call_user_func_array(Array, Array)
+#6 /home/fyquah/dev/php/proj3/app/Controller/MessagesController.php(77): Model->query('SELECT * FROM (...')
+#7 [internal function]: MessagesController->update_location()
+#8 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(MessagesController), Array)
+#9 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#11 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-06-17 19:29:28 Error: Fatal Error (1): Call to undefined method ArrayObject::apend() in [/home/fyquah/dev/php/proj3/app/Controller/MessagesController.php, line 92]
+2014-06-17 19:29:28 Error: [FatalErrorException] Call to undefined method ArrayObject::apend()
+Request URL: /messages/update_location
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/home/fyquah/de...', 92)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/home/fyquah/de...', 92, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/home/fyquah/de...', 92, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-17 19:39:05 Error: Fatal Error (1): Call to a member function count() on a non-object in [/home/fyquah/dev/php/proj3/app/Controller/MessagesController.php, line 94]
+2014-06-17 19:39:05 Error: [FatalErrorException] Call to a member function count() on a non-object
+Request URL: /messages/update_location
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/fyquah/de...', 94)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/fyquah/de...', 94, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/fyquah/de...', 94, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-17 19:39:17 Error: Fatal Error (1): Call to a member function count() on a non-object in [/home/fyquah/dev/php/proj3/app/Controller/MessagesController.php, line 4]
+2014-06-17 19:39:17 Error: [FatalErrorException] Call to a member function count() on a non-object
+Request URL: /messages/update_location
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/fyquah/de...', 4)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/fyquah/de...', 4, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/fyquah/de...', 4, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-17 19:47:27 Error: Fatal Error (4): syntax error, unexpected '}' in [/home/fyquah/dev/php/proj3/app/Controller/MessagesController.php, line 93]
+2014-06-17 19:47:27 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /messages/update_location
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/fyquah/de...', 93)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/fyquah/de...', 93, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/fyquah/de...', 93, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-17 19:54:32 Error: Fatal Error (1): Cannot access empty property in [/home/fyquah/dev/php/proj3/app/Controller/MessagesController.php, line 96]
+2014-06-17 19:54:32 Error: [FatalErrorException] Cannot access empty property
+Request URL: /messages/update_location
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Cannot access e...', '/home/fyquah/de...', 96)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot access e...', '/home/fyquah/de...', 96, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Cannot access e...', '/home/fyquah/de...', 96, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-17 21:32:06 Error: [MissingActionException] Action MessagesController::comment() could not be found.
+Exception Attributes: array (
+  'controller' => 'MessagesController',
+  'action' => 'comment',
+)
+Request URL: /messages/comment
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#2 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-06-17 21:32:17 Error: [MissingTableException] Table comments for model Comment was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'comments',
+  'class' => 'Comment',
+  'ds' => 'default',
+)
+Request URL: /messages/respond
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Model/Model.php(3501): Model->setSource('comments')
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Model/Model.php(1357): Model->getDataSource()
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(2494): Model->schema()
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(1735): DboSource->fields(Object(AppModel), 'Comment', '')
+#4 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(1238): DboSource->generateAssociationQuery(Object(Message), Object(AppModel), 'hasMany', 'Comment', Array, Array, true)
+#5 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(1142): DboSource->queryAssociation(Object(Message), Object(AppModel), 'hasMany', 'Comment', Array, Array, true, Array, 0, Array)
+#6 /home/fyquah/dev/php/proj3/lib/Cake/Model/Model.php(2905): DboSource->read(Object(Message), Array)
+#7 /home/fyquah/dev/php/proj3/lib/Cake/Model/Model.php(2877): Model->_readDataSource('first', Array)
+#8 /home/fyquah/dev/php/proj3/lib/Cake/Model/Datasource/DboSource.php(597): Model->find('first', Array)
+#9 /home/fyquah/dev/php/proj3/lib/Cake/Model/Model.php(800): DboSource->query('findById', Array, Object(Message))
+#10 /home/fyquah/dev/php/proj3/app/Controller/MessagesController.php(187): Model->__call('findById', Array)
+#11 /home/fyquah/dev/php/proj3/app/Controller/MessagesController.php(187): Message->findById(NULL)
+#12 [internal function]: MessagesController->respond()
+#13 /home/fyquah/dev/php/proj3/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(MessagesController), Array)
+#14 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#15 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#16 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#17 {main}
+2014-06-17 22:05:45 Error: Fatal Error (4): syntax error, unexpected 'new' (T_NEW) in [/home/fyquah/dev/php/proj3/app/Controller/AppController.php, line 42]
+2014-06-17 22:05:45 Error: [FatalErrorException] syntax error, unexpected 'new' (T_NEW)
+Request URL: /
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/fyquah/de...', 42)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/fyquah/de...', 42, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/fyquah/de...', 42, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-17 22:06:11 Error: Fatal Error (4): syntax error, unexpected 'new' (T_NEW) in [/home/fyquah/dev/php/proj3/app/Controller/AppController.php, line 42]
+2014-06-17 22:06:11 Error: [FatalErrorException] syntax error, unexpected 'new' (T_NEW)
+Request URL: /
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/fyquah/de...', 42)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/fyquah/de...', 42, Array)
+#2 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/fyquah/de...', 42, Array)
+#3 /home/fyquah/dev/php/proj3/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-06-17 22:11:58 Error: [MissingActionException] Action MessagesController::retrieve() could not be found.
+Exception Attributes: array (
+  'controller' => 'MessagesController',
+  'action' => 'retrieve',
+)
+Request URL: /messages/retrieve
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#2 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-06-17 22:21:14 Error: [MissingActionException] Action MessagesController::retrieve() could not be found.
+Exception Attributes: array (
+  'controller' => 'MessagesController',
+  'action' => 'retrieve',
+)
+Request URL: /messages/retrieve
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 /home/fyquah/dev/php/proj3/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#2 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-06-17 22:23:27 Error: [MissingControllerException] Controller class UpdateLocationController could not be found.
+Exception Attributes: array (
+  'class' => 'UpdateLocationController',
+  'plugin' => NULL,
+)
+Request URL: /update_location
+Stack Trace:
+#0 /home/fyquah/dev/php/proj3/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

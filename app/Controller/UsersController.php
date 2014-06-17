@@ -25,8 +25,7 @@ class UsersController extends AppController {
 			$return = array();
 
 			if($this->User->save($save)){
-
-				$this->firebase->delete('users/' . $user_id);
+				$this->firebase->set('users/' . $user_id . '/access_token/' , NULL);
 				$return = array("notice" => "successfully logged out!");
 			}
 			else
