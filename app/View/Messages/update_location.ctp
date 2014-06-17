@@ -4,11 +4,11 @@
 
 if(isset($var3))
 	print_r($var3);
-echo $this->Form->create("Message" , array("action" => "retrieve"));
+echo $this->Form->create("Message");
 echo $this->Form->input("Message.lat");
 echo $this->Form->input("Message.lng");
-echo $this->Form->input("access_token");
-echo $this->Form->end("Retrieve Messages");
+echo $this->Form->input("User.access_token" , array('required' => true));
+echo $this->Form->end("Update Location");
 ?>
 <br />
 <?php echo $this->Html->link("Click here to broadcast a message" , array("controller"=> "messages" , "action" => "submit")) ?>

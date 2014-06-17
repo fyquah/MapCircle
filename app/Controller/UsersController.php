@@ -10,6 +10,31 @@ class UsersController extends AppController {
 		
 	}
 
+	public function logout(){
+		if($this->request->is("post")){
+			$access_token = $this->request->data['User']['access_token'];
+			$user_id = $this->_check($access_token);
+			if(is_numeric($user_id));
+			else
+				return $user_id;
+			$save['id'] = $user_id;
+			$save['token'] = NULL;
+
+			$return = array();
+
+			if($this->User->save($save)){
+
+				$firebase = new Firebase(FIREBASE_URI);
+				$firebase->delete('users/' . $user_id);
+				$return = array("notice" => "successfully logged out!");
+			}
+			else
+				$return = array("error" => "Error logging use out");
+
+			return $this->render_response($return , 200);
+		}
+	}
+
 	public function login(){
 		if($this->request->is("post")){
 
@@ -36,9 +61,22 @@ class UsersController extends AppController {
 					$return['return']['token'] = $save['token'];
 					$return['return']['id'] = $check['User']['id'];
 					$return['return']['username'] = $check['User']['username'];
+
+					$active_user = array();
+					$active_user['user_id'] = $check['User']['id'];
+
+					$firebase = new Firebase(FIREBASE_URI);
+					$firebase->update('users' , array(
+						$save['id'] => array(		
+							'access_token' => ($save['token']),
+							'username' => $check['User']['username']
+						)
+					));
+					return $this->render_response($return , 200);
+
 				}
 				else {
-					$return['error'] = "Error obtaining token, please try again";
+					$return['error'] = "Cannot obtain token, please try again";
 					$return['return'] = false;
 				}
 			
@@ -48,7 +86,7 @@ class UsersController extends AppController {
 				$return['return'] = false;
 			}
 
-			return $this->render_response($return , 200);
+			return $this->render_response($return , 404);
 		}
 	}
 

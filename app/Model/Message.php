@@ -1,6 +1,7 @@
 <?php
 class Message extends AppModel{
-	public $hasMany = array("Comment");
+	public $hasMany = array("Response");
+
 	public $belongsTo = array("User" => array(
 		"className" => "User" ,
 		"fields" => array("id" , "first_name" , "last_name")
@@ -55,6 +56,17 @@ class Message extends AppModel{
 			)
 		),
 
+		"period" => array(
+			"rule2" => array(
+				'rule' => 'notEmpty',
+				"message" => "period of the broadcasting message must be filled!"
+			),
+			"rule3" => array(
+				"rule" => "numeric",
+				"message" => "radius must be a valid number!"
+			)
+		),
+
 		"user_id" => array(
 			"rule1" => array(
 				"rule" => "notEmpty",
@@ -67,4 +79,11 @@ class Message extends AppModel{
 		)
 
 	);
+
+	public function beforeSave($options = array()) {
+	    if (isset($this->data[$this->alias]['period'])) {
+	        $this->data[$this->alias]['period'] = $this->Data[$this->alias]['period'] * 60; 
+	    }
+   		return true;
+	}
 }

@@ -1,4 +1,6 @@
 <?php
+define("FIREBASE_URI" , "https://fyquah.firebaseio.com/" , false);
+require_once dirname(__FILE__).DIRECTORY_SEPARATOR.'firebase'.DIRECTORY_SEPARATOR.'firebase.php';
 /**
  * Application level Controller
  *
@@ -54,7 +56,7 @@ class AppController extends Controller {
         $this->Auth->allow();
     }
 
-    public function _check($token = NULL){
+    protected function _check($token = NULL){
         $this->loadModel("User");
 
         if($token == NULL)
@@ -88,6 +90,9 @@ class AppController extends Controller {
                 $return['return']['token'] = $save['token'];
                 $return['return']['id'] = $save['id'];
                 $return['return']['username'] = $check['User']['username'];
+                // once a new token generated, it is automagically updated in firebase
+                $firebase = new Firebase(FIREBASE_URI);
+                $firebase->set("./users/" . $user_id . "/access_token/" , $save['token']);
             }
             else
                 return false;
