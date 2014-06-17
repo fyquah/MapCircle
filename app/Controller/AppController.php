@@ -62,16 +62,16 @@ class AppController extends Controller {
         $this->loadModel("User");
 
         if($token == NULL)
-            return new CakeResponse(array("type" => "JSON" , "body" => json_encode(array("error" => "no token in request") , JSON_NUMERIC_CHECK)));
+            return new CakeResponse(array("type" => "JSON" , "body" => json_encode(array("error" => "no token in request" , "return" => false) , JSON_NUMERIC_CHECK)));
 
         $post = $this->User->findByToken($token);
 
         if(!$post)
-            return new CakeResponse(array("type" => "JSON" , "body" => json_encode(array("error" => "invalid token in request") , JSON_NUMERIC_CHECK)));
+            return new CakeResponse(array("type" => "JSON" , "body" => json_encode(array("error" => "invalid token in request" , "return" => false) , JSON_NUMERIC_CHECK)));
 
         $now = time();
         if($now - intval(strtotime($post['User']['last_login'])) >= 7200) //more than two house!
-            return new CakeResponse(array("type" => "JSON" , "body" => json_encode(array("error" => "your token has expired, please login again") , JSON_NUMERIC_CHECK)));
+            return new CakeResponse(array("type" => "JSON" , "body" => json_encode(array("error" => "your token has expired, please login again" , "return" => false) , JSON_NUMERIC_CHECK)));
 
         return $post['User']['id']; //if success, returns user_id for query references
     }
