@@ -103,10 +103,9 @@ class MessagesController extends AppController {
 
 					sort($already_have);
 
-
 					for($i = 0 ; $i < count($results) ; $i++)
-						if(!expired($results[$i]['Message']['created'] , $results[$i]['Message']['period']) && !binary_search($already_have , intval($result[$i]['Message']['id']))){
-							$this->firebase->push('/users/' . $user_id . '/inbox/' , intval($result[$i]['Message']['id']));
+						if(!expired($results[$i]['Message']['created'] , $results[$i]['Message']['period']) && !binary_search($already_have , intval($results[$i]['Message']['id']))){
+							$this->firebase->push('/users/' . $user_id . '/inbox/' , intval($results[$i]['Message']['id']));
 							$flag = true;
 						}
 				}
