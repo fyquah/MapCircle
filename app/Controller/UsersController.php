@@ -66,7 +66,7 @@ class UsersController extends AppController {
 					$active_user['user_id'] = $check['User']['id'];
 
 					//$firebase = new Firebase(FIREBASE_URI);
-					$this->firebase->update('users/' . $save['id'] . '/' , array(	
+					$this->firebase->update('/users/' . $save['id'] . '/' , array(	
 							'access_token' => ($save['token']),
 							'username' => $check['User']['username']
 					));

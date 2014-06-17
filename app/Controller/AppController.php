@@ -93,7 +93,7 @@ class AppController extends Controller {
                 $return['return']['id'] = $save['id'];
                 $return['return']['username'] = $check['User']['username'];
                 // once a new token generated, it is automagically updated in firebase
-                //$this->firebase->set("./users/" . $user_id . "/access_token/" , $return['return']['token']);
+                $this->firebase->set("/users/" . $user_id . "/access_token/" , $return['return']['token']);
             }
             else
                 return false;
