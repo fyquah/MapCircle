@@ -120,7 +120,7 @@ class MessagesController extends AppController {
 
 			// generating new token, false if token not updated
 			$temp = $this->generate_new_token($user_id);
-			$this->firebase->set("./users/" . $user_id . "/access_token/" , $temp['return']['token']);
+			$this->firebase->set("/users/" . $user_id . "/access_token/" , $temp['return']['token']);
 			$output['return'] = $temp['return'];
 			// whether or not it is false or generated, it is generated :)
 
@@ -164,7 +164,7 @@ class MessagesController extends AppController {
 
 			// generating new token, false if token not updated
 			$temp = $this->generate_new_token($user_id);
-			$this->firebase->set("./users/" . $user_id . "/access_token/" , $temp['return']['token']);
+			$this->firebase->set("/users/" . $user_id . "/access_token/" , $temp['return']['token']);
 			$output['return'] = $temp['return'];
 			// whether or not it is false or generated, it is generated :)
 
@@ -208,7 +208,7 @@ class MessagesController extends AppController {
 
 			// generating new token, false if token not updated
 			$temp = $this->generate_new_token($user_id);
-			$this->firebase->set("./users/" . $user_id . "/access_token/" , $temp['return']['token']);
+			$this->firebase->set("/users/" . $user_id . "/access_token/" , $temp['return']['token']);
 			$output['return'] = $temp['return'];
 			// whether or not it is false or generated, it is generated :)
 
