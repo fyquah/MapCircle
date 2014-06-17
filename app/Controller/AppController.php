@@ -96,12 +96,12 @@ class AppController extends Controller {
                 $this->firebase->set("/users/" . $user_id . "/access_token/" , $return['return']['token']);
             }
             else
-                return false;
+                return array("return" => false);
 
             return $return;
         }
         else
-            return false;
+            return array("return" => false);
     }
 
     protected function render_response($output = NULL , $status_code = 200){

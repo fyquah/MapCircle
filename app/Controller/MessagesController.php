@@ -197,13 +197,13 @@ class MessagesController extends AppController {
 
 					$response = $this->Message->Response->findByid($this->Message->Response->id);
 
-					$output['notice'] = "Your comment has been submitted!";
+					$output['notice'] = "Your response has been submitted!";
 
 					$this->firebase->push("/messages/" . $message_id . "/Response/" , $response['Response']);
 				}
 
 				else
-					$output['error'] = "An error occured in saving comment!";
+					$output['error'] = "An error occured in saving response!";
 			}
 
 			// generating new token, false if token not updated
