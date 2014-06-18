@@ -87,7 +87,6 @@ class MessagesController extends AppController {
 
 				// (!$temp) indicates that there are no records available at that URI
 				if(strtolower($temp) == 'null'){
-					$output['lol'] = 'code was here';
 					for($i = 0 ; $i < count($results) ; $i++)
 						if(!expired($results[$i]['Message']['created'] , $results[$i]['Message']['period'])) {
 							$this->firebase->push("/users/" . $user_id . "/inbox/" , intval($results[$i]['Message']['id']));
@@ -200,7 +199,7 @@ class MessagesController extends AppController {
 
 					$firebase_id = $this->firebase->push("/messages/" . $message_id . "/Response/" , $response);
 					$firebase_id = json_decode($firebase_id , true);
-					
+
 					$update = array();
 					$update['firebase_id'] = $firebase_id['name'];
 					$this->Message->Response->save($update);
