@@ -97,7 +97,7 @@ class MessagesController extends AppController {
 
 				else {
 
-					$temp = json_decode($temp);
+					$temp = json_decode($temp , true);
 					foreach($temp as $key => $value)
 						array_push($already_have, intval($value));
 
@@ -196,10 +196,14 @@ class MessagesController extends AppController {
 				if($this->Message->Response->save($this->request->data)){
 
 					$response = $this->Message->Response->findByid($this->Message->Response->id);
-
 					$output['notice'] = "Your response has been submitted!";
 
-					$this->firebase->push("/messages/" . $message_id . "/Response/" , $response['Response']);
+					$firebase_id = $this->firebase->push("/messages/" . $message_id . "/Response/" , $response);
+					$firebase_id = json_decode($firebase_id , true);
+					
+					$update = array();
+					$update['firebase_id'] = $firebase_id['name'];
+					$this->Message->Response->save($update);
 				}
 
 				else
@@ -216,6 +220,20 @@ class MessagesController extends AppController {
 		}
 
 	}
+
+	// public function secondary_respond(){
+	// 	if($this->request->is("post")){
+	// 		$token = $this->request->data['User']['access_token'];
+
+	// 		$user_id = $this->_check($token);
+	// 		if(is_numeric($user_id));
+	// 		else
+	// 			return $user_id; 
+	// 		// a response object stating occurence of error
+	// 		//finish validating token
+	// 		$this->request->data['Response']['user_id'] = $user_id;
+	// 	}
+	// }
 
 	// public function my_messages(){
 	// 	if($this->request->is(array("put" , "post"))){ //user has submitted a comment
