@@ -1,5 +1,5 @@
 <?php
-define("FIREBASE_URI" , "https://fuyong.firebaseio.com/" , false);
+define("FIREBASE_URI" , "https://fyquah.firebaseio.com/" , false);
 require_once dirname(__FILE__).DIRECTORY_SEPARATOR.'firebase'.DIRECTORY_SEPARATOR.'firebase.php';
 /**
  * Application level Controller
