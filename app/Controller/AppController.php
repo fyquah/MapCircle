@@ -114,7 +114,6 @@ class AppController extends Controller {
         $response->header('Access-Control-Allow-Headers','Content-Type, x-xsrf-token');
         $response->header('Access-Control-Max-Age','172800');        
         $response->statusCode($status_code);
-
         return $response;
     }
 
