@@ -1,5 +1,5 @@
 <?php
-define("FIREBASE_URI" , "https://fyquah.firebaseio.com/" , false);
+define("FIREBASE_URI" , "https://fuyong.firebaseio.com/" , false);
 require_once dirname(__FILE__).DIRECTORY_SEPARATOR.'firebase'.DIRECTORY_SEPARATOR.'firebase.php';
 /**
  * Application level Controller
@@ -50,11 +50,11 @@ class AppController extends Controller {
     );
 
     public function beforeFilter(){
-        //check token
 
-        //because i am just using auth component for password hashing, have to allow all
-        $this->firebase = new Firebase(FIREBASE_URI);
         $this->response->header('Access-Control-Allow-Origin' , '*');
+        $this->response->header("Access-Control-Allow-Methods" , "*");
+
+        $this->firebase = new Firebase(FIREBASE_URI);
         $this->Auth->allow();
     }
 
@@ -105,14 +105,17 @@ class AppController extends Controller {
     }
 
     protected function render_response($output = NULL , $status_code = 200){
-    	return new CakeResponse(array(
-    		"type" => "JSON" , 
-    		"body" => json_encode($output , JSON_NUMERIC_CHECK),
-    		'header' => array(
-    			'Access-Control-Allow-Origin' => '*',
-    			'statusCode' => $status_code
-    		)
-    	));
+    	$response = new CakeResponse;
+        $response->body(json_encode($output) , JSON_NUMERIC_CHECK);
+        $response->type("json");
+        $response->header('Access-Control-Allow-Origin','*');
+        $response->header('Access-Control-Allow-Methods','*');
+        $response->header('Access-Control-Allow-Headers','X-Requested-With');
+        $response->header('Access-Control-Allow-Headers','Content-Type, x-xsrf-token');
+        $response->header('Access-Control-Max-Age','172800');        
+        $response->statusCode($status_code);
+
+        return $response;
     }
 
     /*Using Basic Auth

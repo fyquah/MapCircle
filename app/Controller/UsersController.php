@@ -70,6 +70,8 @@ class UsersController extends AppController {
 							'access_token' => ($save['token']),
 							'username' => $check['User']['username']
 					));
+
+
 					return $this->render_response($return , 200);
 
 				}
@@ -80,11 +82,14 @@ class UsersController extends AppController {
 			
 			}
 			else{
+
 				$return['error'] = "Check your user credentials again";
+
 				$return['return'] = false;
 			}
 
-			return $this->render_response($return , 404);
+
+			return $this->render_response($return , 200);
 		}
 	}
 
