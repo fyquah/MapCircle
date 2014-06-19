@@ -51,11 +51,12 @@ class AppController extends Controller {
 
     public function beforeFilter(){
 
-        $this->response->header('Access-Control-Allow-Origin' , '*');
-        $this->response->header("Access-Control-Allow-Methods" , "*");
-        $this->response->header('Access-Control-Allow-Headers','X-Requested-With');
-        $this->response->header('Access-Control-Allow-Headers','Content-Type, x-xsrf-token');
-        $this->response->header('Access-Control-Max-Age','172800'); 
+       $this->response->header(array(
+            "Access-Control-Allow-Origin" => "*",
+            'Access-Control-Allow-Methods'=> 'POST',
+            'Access-Control-Allow-Headers' => 'X-Requested-With , Content-Type, x-xsrf-token',
+            'Access-Control-Max-Age'=> '172800',
+        ));   
 
 
         $this->firebase = new Firebase(FIREBASE_URI);
@@ -109,17 +110,17 @@ class AppController extends Controller {
     }
 
     protected function render_response($output = NULL , $status_code = 200){
-        $this->response->header(array(
-            "Access-Control-Allow-Origin" => "*",
-            'Access-Control-Allow-Methods'=> '*',
-            'Access-Control-Allow-Headers' => 'X-Requested-With',
-            'Access-Control-Allow-Headers'=> 'Content-Type, x-xsrf-token',
-            'Access-Control-Max-Age'=> '172800',
-        ));        
         $this->response->type("json");
         $this->response->body(json_encode($output) , JSON_NUMERIC_CHECK);
 
         $this->response->statusCode($status_code);
+        $this->response->header(array(
+            "Access-Control-Allow-Origin" => "*",
+            'Access-Control-Allow-Credentials' => 'true',
+            'Access-Control-Allow-Methods'=> 'POST',
+            'Access-Control-Allow-Headers' => 'X-Requested-With , Content-Type, x-xsrf-token',
+            'Access-Control-Max-Age'=> '172800',
+        ));        
         return $this->response;
     }
 
