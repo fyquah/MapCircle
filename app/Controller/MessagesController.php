@@ -1,6 +1,5 @@
 <?php
 
-
 class MessagesController extends AppController {
 
 
@@ -240,41 +239,41 @@ class MessagesController extends AppController {
 		}
 	}
 
-	public function my_messages(){
-		if($this->request->is(array("put" , "post"))){ //user has submitted a comment
+	// public function my_messages(){
+	// 	if($this->request->is(array("put" , "post"))){ //user has submitted a comment
 
-			$token = $this->request->data['User']['access_token'];
+	// 		$token = $this->request->data['User']['access_token'];
 
-			$user_id = $this->_check($token);
-			if(is_numeric($user_id));
-			else
-				return $user_id; // a response object stating occurence of error
-			//finish validating token
+	// 		$user_id = $this->_check($token);
+	// 		if(is_numeric($user_id));
+	// 		else
+	// 			return $user_id; // a response object stating occurence of error
+	// 		//finish validating token
 
-			$output = array();
-			$posts = $this->Message->find("all" , array(
-				"conditions" => array(
-					"user_id" => $user_id
-				)
-			));
+	// 		$output = array();
+	// 		$posts = $this->Message->find("all" , array(
+	// 			"conditions" => array(
+	// 				"user_id" => $user_id
+	// 			)
+	// 		));
 
-			if($posts) {
-				$output['result'] = $posts;
-			}
-			else if($posts == array()) {
-				$output['notice'] = 'you have not posted any stuff';
-			}
-			else {
-				$output['error'] = "error in retrieving posts!";
-			}
+	// 		if($posts) {
+	// 			$output['result'] = $posts;
+	// 		}
+	// 		else if($posts == array()) {
+	// 			$output['notice'] = 'you have not posted any stuff';
+	// 		}
+	// 		else {
+	// 			$output['error'] = "error in retrieving posts!";
+	// 		}
 
-			// generating new token, false if token not updated
-			$temp = $this->generate_new_token($user_id);
-			$output['return'] = $temp['return'];
-			// whether or not it is false or generated, it is generated :)
+	// 		// generating new token, false if token not updated
+	// 		$temp = $this->generate_new_token($user_id);
+	// 		$output['return'] = $temp['return'];
+	// 		// whether or not it is false or generated, it is generated :)
 
-			return $this->render_response($output);
-		}
-	}
+	// 		return $this->render_response($output);
+	// 	}
+	// }
 }
 

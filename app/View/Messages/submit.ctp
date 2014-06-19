@@ -1,7 +1,7 @@
 <?php
 
 echo $this->Form->create("Message" , array("action" => "submit"));
-echo $this->Form->input("Message.message");
+echo $this->Form->input("Message.content");
 echo $this->Form->input("Message.lat");
 echo $this->Form->input("Message.lng");
 echo $this->Form->input("Message.radius");
