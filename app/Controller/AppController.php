@@ -53,8 +53,6 @@ class AppController extends Controller {
 
         $this->response->header('Access-Control-Allow-Origin' , '*');
         $this->response->header("Access-Control-Allow-Methods" , "*");
-        $this->response->header('Access-Control-Allow-Origin','*');
-        $this->response->header('Access-Control-Allow-Methods','*');
         $this->response->header('Access-Control-Allow-Headers','X-Requested-With');
         $this->response->header('Access-Control-Allow-Headers','Content-Type, x-xsrf-token');
         $this->response->header('Access-Control-Max-Age','172800'); 
@@ -111,16 +109,18 @@ class AppController extends Controller {
     }
 
     protected function render_response($output = NULL , $status_code = 200){
-    	$response = new CakeResponse;
-        $response->body(json_encode($output) , JSON_NUMERIC_CHECK);
-        $response->type("json");
-        $response->header('Access-Control-Allow-Origin','*');
-        $response->header('Access-Control-Allow-Methods','*');
-        $response->header('Access-Control-Allow-Headers','X-Requested-With');
-        $response->header('Access-Control-Allow-Headers','Content-Type, x-xsrf-token');
-        $response->header('Access-Control-Max-Age','172800');        
-        $response->statusCode($status_code);
-        return $response;
+        $this->response->header(array(
+            "Access-Control-Allow-Origin" => "*",
+            'Access-Control-Allow-Methods'=> '*',
+            'Access-Control-Allow-Headers' => 'X-Requested-With',
+            'Access-Control-Allow-Headers'=> 'Content-Type, x-xsrf-token',
+            'Access-Control-Max-Age'=> '172800',
+        ));        
+        $this->response->type("json");
+        $this->response->body(json_encode($output) , JSON_NUMERIC_CHECK);
+
+        $this->response->statusCode($status_code);
+        return $this->response;
     }
 
     /*Using Basic Auth
