@@ -19,7 +19,7 @@ class MessagesController extends AppController {
 
 			$latitude = $this->request->data["Message"]["lat"];
 			$longtitude = $this->request->data['Message']['lng'];
-			$radius = $this->request->data['Message']['radius'];
+			$radius = intval($this->request->data['Message']['radius']);
 			$this->request->data['Message']['user_id'] = $user_id;
 
 			$output = array();
@@ -35,6 +35,15 @@ class MessagesController extends AppController {
 				//automatically add the message into my_messages
 				$this->firebase->push("/users/" . $user_id . "/outbox/" , intval($this->Message->id));
 
+				$users = $this->Message->query("SELECT * FROM (SELECT id , token , lat , lng ,( 6371 * acos( cos( radians($latitude) ) * cos( radians( lat ) ) * cos( radians( lng ) - radians($longtitude) ) + sin( radians($latitude) ) * sin( radians( lat ) ) ) ) AS distance FROM users ORDER BY distance) AS User WHERE id != $user_id");
+				
+				foreach($users as $user){
+					if($user['User']['lat'] == NULL || $user['User']['lng'] == NULL || $user['User']['token'] == NULL || $user['User']['id'] == $user_id) continue;
+					$distance = intval($user['User']['distance']);
+					if($distance <= $radius)
+						$this->firebase->push("/users/" . $user['User']['id'] . "/inbox/" , intval($this->Message->id));
+				}
+				$output['users'] = $users;
 			}
 
 			else
@@ -62,9 +71,17 @@ class MessagesController extends AppController {
 				return $user_id; 
 			// a response object stating occurence of error
 			// finish validating token
-
 			$longtitude = $this->request->data['Message']['lng'];
 			$latitude = $this->request->data['Message']['lat'];
+
+			// the extra method
+			$this->loadModel("User");
+			$save = array();
+			$save['lat'] = $latitude;
+			$save['id'] = $user_id;;
+			$save['lng'] = $longtitude;
+			$this->User->save($save);
+			// end of extra method
 
 			$output = array();
 

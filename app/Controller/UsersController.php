@@ -29,7 +29,7 @@ class UsersController extends AppController {
 				$return = array("notice" => "successfully logged out!");
 			}
 			else
-				$return = array("error" => "Error logging use out");
+				$return = array("error" => "Error logging user out");
 
 			return $this->render_response($return , 200);
 		}
@@ -68,7 +68,9 @@ class UsersController extends AppController {
 					//$firebase = new Firebase(FIREBASE_URI);
 					$this->firebase->update('/users/' . $save['id'] . '/' , array(	
 							'access_token' => ($save['token']),
-							'username' => $check['User']['username']
+							'username' => $check['User']['username'],
+							'first_name' => $check['User']['first_name'],
+							'last_name' => $check['User']['last_name']
 					));
 
 
