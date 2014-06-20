@@ -43,7 +43,6 @@ class MessagesController extends AppController {
 					if($distance <= $radius)
 						$this->firebase->push("/users/" . $user['User']['id'] . "/inbox/" , intval($this->Message->id));
 				}
-				$output['users'] = $users;
 			}
 
 			else
