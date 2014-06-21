@@ -162,8 +162,16 @@ class MessagesController extends AppController {
 					$response = $this->Message->Response->findByid($this->Message->Response->id);
 					$output['notice'] = "Your response has been submitted!";
 
-					$firebase_id = $this->firebase->set("/messages/" . $message_id . "/responses/" . $this->Message->Response->id . "/" , $response);
-					
+					$this->firebase->set("/messages/" . $message_id . "/responses/" . $this->Message->Response->id . "/" , $response);
+					$temp = $this->firebase->get("/users/" . $user_id . "/inbox/");
+					$temp = json_decode($temp , true);
+					foreach($temp as $hash => $value){
+						if($value == $message_id){
+							$this->firebase->set("/users/" . $user_id . "/inbox/" . $hash . "/", $message_id . "|" . $this->Message->Response->id );
+							break;
+						}
+					}
+
 					// $firebase_id = json_decode($firebase_id , true);
 
 					// $update = array();
