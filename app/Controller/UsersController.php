@@ -37,14 +37,14 @@ class UsersController extends AppController {
 
 	public function login(){
 		if($this->request->is("post")){
-
-			$post["email"] = $this->request->data['User']['email'];
+			
+			$post["username"] = $this->request->data['User']['username'];
 			$post['password'] = $this->request->data['User']['password'];
 			$data['hash'] = $this->Auth->password($post['password']); // Uses simple hasher
 
 			$check = $this->User->find('first' , array(
 				"conditions" => array(
-					"email" => $post['email'],
+					"username" => $post['username'],
 					'password' => $data['hash']
 				)
 			));
@@ -54,7 +54,7 @@ class UsersController extends AppController {
 
 			if($check){
 				$save['id'] = $check['User']['id'];
-				$save['token'] = $this->Auth->password($check['User']['username'] . date('Y-m-d H:i:s'));
+				$save['token'] = $this->Auth->password($post['username'] . date('Y-m-d H:i:s'));
 				$save['last_login'] = date('Y-m-d H:i:s');
 
 				if($this->User->save($save)) {
