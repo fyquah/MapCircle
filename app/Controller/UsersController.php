@@ -37,7 +37,9 @@ class UsersController extends AppController {
 
 	public function login(){
 		if($this->request->is("post")){
+			$post = array();
 			
+			//$post['email'] = $this->request->data["User"]['email'];
 			$post["username"] = $this->request->data['User']['username'];
 			$post['password'] = $this->request->data['User']['password'];
 			$data['hash'] = $this->Auth->password($post['password']); // Uses simple hasher

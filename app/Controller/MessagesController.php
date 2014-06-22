@@ -164,13 +164,18 @@ class MessagesController extends AppController {
 
 					$this->firebase->set("/messages/" . $message_id . "/responses/" . $this->Message->Response->id . "/" , $response);
 					$temp = $this->firebase->get("/users/" . $user_id . "/inbox/");
+
 					$temp = json_decode($temp , true);
-					foreach($temp as $hash => $value){
-						if($value == $message_id){
-							$this->firebase->set("/users/" . $user_id . "/inbox/" . $hash . "/", $message_id . "|" . $this->Message->Response->id );
-							break;
+
+					if($temp != NULL || strtolower($temp) != 'null'){
+						foreach($temp as $hash => $value){
+							if($value == $message_id){
+								$this->firebase->set("/users/" . $user_id . "/inbox/" . $hash . "/", $message_id . "|" . $this->Message->Response->id );
+								break;
+							}
 						}
 					}
+					
 
 					// $firebase_id = json_decode($firebase_id , true);
 
