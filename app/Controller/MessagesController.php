@@ -167,7 +167,7 @@ class MessagesController extends AppController {
 
 					$temp = json_decode($temp , true);
 
-					if($temp != NULL || strtolower($temp) != 'null'){
+					if($temp != NULL && strtolower($temp) != 'null'){
 						foreach($temp as $hash => $value){
 							if($value == $message_id){
 								$this->firebase->set("/users/" . $user_id . "/inbox/" . $hash . "/", $message_id . "|" . $this->Message->Response->id );
