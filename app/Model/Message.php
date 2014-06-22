@@ -4,7 +4,7 @@ class Message extends AppModel{
 
 	public $belongsTo = array("User" => array(
 		"className" => "User" ,
-		"fields" => array("id" , "first_name" , "last_name")
+		"fields" => array("id" , "first_name" , "last_name" , "username")
 	));
 
 	public $validate = array(
